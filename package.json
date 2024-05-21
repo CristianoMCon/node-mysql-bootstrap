@@ -1,0 +1,20 @@
+{
+  "name": "mysql-bootstrap",
+  "version": "1.0.0",
+  "description": "CRUD de roupas com mysql",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "bootstrap",
+    "mysql"
+  ],
+  "author": "Cristianoviski",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
