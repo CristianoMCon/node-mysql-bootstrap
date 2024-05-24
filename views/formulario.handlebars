@@ -1,19 +1,37 @@
 <main>
 
     <div class="container ">
+        <p class="formulario">Cadastrar novo produto</p>
         <div class="row">
-            <div class="col-md-6 offset-3">
-                
-                <p class="formulario">Cadastrar novo produto</p>
-
-                <form action="/cadastrar" method="post">
-                    <input type="text"   name="nome" class="form-control" placeholder="Nome">
-                    <input type="number" name="valor" class="form-control" placeholder="1.99">
+            <div class="col-md-6 offset-3">                
+                <form action="/cadastrar" method="post" enctype="multipart/form-data">
+                    <input type="text"   name="nome" class="form-control" placeholder="Camisa" value="Camisa">
+                    <input type="number" name="valor" class="form-control" placeholder="10.99" value="10.99">
                     <input type="file"   name="imagem" class="form-control">
                     <input type="submit" class="btn btn-primary btn-sm" value="Cadastrar">
                 </form>
             </div>
         </div>
+
+
+        <div class="row">
+            <p class="formulario">Produtos cadastrados: {{produtos.length}}</p>
+            {{#each produtos}}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card">
+                    <img src="../imagens/{{imagem}}" />
+                    <div class="textos">
+                        <p>{{nome}}</p>
+                        <p>R$ {{valor}}</p>
+                    </div>
+                    <a href="/formalterar/{{codigo}}" class="btn btn-warning btn-sm"> Alterar </a>
+                    <a href="/excluir/{{codigo}}&{{imagem}}" class="btn btn-danger btn-sm"> Excluir </a>
+                </div>  
+            </div>
+            {{/each}}
+        </div>
+
+
     </div>
 
 </main>

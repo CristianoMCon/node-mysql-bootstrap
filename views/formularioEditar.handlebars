@@ -1,0 +1,22 @@
+<main>
+
+    <div class="container ">
+        <p class="formulario">Alterar produto</p>
+        <div class="row">
+            <div class="col-md-6 offset-3">       
+                <form action="/alterar" method="post" enctype="multipart/form-data">
+                    <img src="../imagens/{{produtos.imagem}}" >         
+                    <input type="hidden"   name="codigo" value="{{produtos.codigo}}">                    
+                    <input type="hidden"   name="imagemAntiga" value="{{produtos.imagem}}">                    
+                    <input type="text"   name="nome" class="form-control" placeholder="Camisa" value="{{produtos.nome}}">
+                    <input type="number" name="valor" class="form-control" placeholder="10.99" value="{{produtos.valor}}">
+                    <input type="file"   name="imagem" class="form-control">
+                    <input type="submit" class="btn btn-success btn-sm" value="Alterar">
+                    <input type="button" class="btn btn-secondary btn-sm" onclick="location.href='/'" value="Cancelar">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</main>
